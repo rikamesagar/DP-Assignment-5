@@ -7,17 +7,25 @@ public class Driver {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		String inputfile=args[0];
-		int kmax=Integer.parseInt(args[1]);
+		String inputfile="input.txt";
+		
+		String outputfile="output.txt";
 	
-		int argc=Integer.parseInt(args[2]);
+		
 		
 		if(!checkArguments(args)) {
 			
 			throw new RuntimeException("Invalid number of arguments");
 		}
 		
-		MyLogger logger =new MyLogger(argc);
+		MyLogger logger =new MyLogger(1);
+		
+		
+		
+		
+		
+		
+		
 	}
 	
 	
