@@ -6,10 +6,6 @@ import java.io.IOException;
 
 public class FileProcessor {
 
-
-
-
-
 	BufferedReader br;
 	FileReader filereader;
 	
@@ -28,13 +24,8 @@ public class FileProcessor {
 			System.out.println("Exception in reading File");
 			e.printStackTrace();
 		}
-		
-		
 	}
-	
-	
-	
-		
+
 	/**
 	 * @return String
 	 */
@@ -69,6 +60,4 @@ public class FileProcessor {
 			// TODO: handle exception
 		}
 	}
-
-
 }
