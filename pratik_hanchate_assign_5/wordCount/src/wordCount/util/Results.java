@@ -4,6 +4,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import wordCount.util.MyLogger.DebugLevel;
+
 
 
 
@@ -53,7 +55,7 @@ public class Results implements StdoutDisplayInterface,FileDisplayInterface{
 		try {
 			
 			bw.write(s);
-		//**	MyLogger.writeMessage("Write to file",DebugLevel.READ);
+			MyLogger.writeMessage("Write to file",DebugLevel.READ);
 						
 			} catch (Exception e) {
 			// TODO: handle exception
