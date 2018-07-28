@@ -8,17 +8,15 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-<<<<<<< HEAD
 import wordCount.util.MyLogger.DebugLevel;
 
 
 
 
-=======
+
 /**
  * Results class to print out the results to file and Standard Output
  */
->>>>>>> 3b45a522ed3a1cc11ee99cd4e970247a8df96374
 public class Results implements StdoutDisplayInterface,FileDisplayInterface{
 
 
