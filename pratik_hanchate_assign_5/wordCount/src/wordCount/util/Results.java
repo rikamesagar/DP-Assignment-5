@@ -1,14 +1,24 @@
 package wordCount.util;
 
+/**
+ * 
+ */
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
+<<<<<<< HEAD
 import wordCount.util.MyLogger.DebugLevel;
 
 
 
 
+=======
+/**
+ * Results class to print out the results to file and Standard Output
+ */
+>>>>>>> 3b45a522ed3a1cc11ee99cd4e970247a8df96374
 public class Results implements StdoutDisplayInterface,FileDisplayInterface{
 
 
@@ -20,6 +30,11 @@ public class Results implements StdoutDisplayInterface,FileDisplayInterface{
 	
 	MyLogger logger =new MyLogger(TAG);
 
+	/**
+	 * Constructor for the Results class
+	 * @param outputfile parameter for the output file
+	 * @param outputstring parameter for the string to be printed
+	 */
 	public Results(String outputfile, String outputstring) {
 		try {
 						 
@@ -37,8 +52,11 @@ public class Results implements StdoutDisplayInterface,FileDisplayInterface{
 		
 		
 	}
-	
-	
+
+	/**
+	 * Method to write the output to Standard Output
+	 * @param s
+	 */
 	@Override
 	public void writeToStdout(String s) {
 		// TODO Auto-generated method stub
@@ -47,7 +65,10 @@ public class Results implements StdoutDisplayInterface,FileDisplayInterface{
 		
 	}
 
-
+	/**
+	 * Method to write the output to File
+	 * @param s
+	 */
 	@Override
 	public void writeToFile(String s) {
 		// TODO Auto-generated method stub
@@ -70,16 +91,7 @@ public class Results implements StdoutDisplayInterface,FileDisplayInterface{
 				e.printStackTrace();
 			}
 		}
-		
-		
-		
-		
+
 	}
-
-
-	
-	
-
-
 
 }
