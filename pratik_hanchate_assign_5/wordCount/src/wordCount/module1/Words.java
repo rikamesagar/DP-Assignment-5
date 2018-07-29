@@ -4,15 +4,9 @@ import wordCount.BinarySearchTree.BinarySearchTree;
 
 public class Words implements WordsI {
 
-    @Override
-    public int noOfUniqueWords() {
-
-        return 0;
-    }
 
     @Override
-    public int noOfWord(BinarySearchTree root) {
-
+    public int noOfDistinctWords() {
         if (root==null)
             return 0;
 
@@ -46,8 +40,12 @@ public class Words implements WordsI {
     }
 
     @Override
+    public int noOfWords() {
+        return 0;
+    }
+
+    @Override
     public int noOfCharacters() {
-        
         return 0;
     }
 }
