@@ -4,16 +4,19 @@ import java.util.ArrayList;
 
 public class Node{
 
-	public int bnumber;
+	public String word;
 	public ArrayList<String> courses;
 	Node leftchild;
 	Node rightchild;
-	public ArrayList<ObserverI> observers;
+	int wordCount;
+	int distinctwords;
+	int charactercount;
 	
-	public Node(int b_in) {
-		bnumber=b_in;
+	
+	public Node(String word_in) {
+		word=word_in;
 		courses=new ArrayList<String>();
-		observers=new ArrayList<ObserverI>();
+		
 		leftchild=rightchild=null;
 		
 	}
@@ -30,17 +33,22 @@ public class Node{
 
 
 
-	public int getNodeIndex() {
-		return bnumber;
+
+	public String getNodeWord() {
+		return word;
+	}
+
+	public  void setNodeWord(String w_in) {
+		
+		this.word=w_in;
 	}
 
 
 
-
-
-
-	public void setNodeIndex(int bnumber) {
-		this.bnumber = bnumber;
+	public int getNodeLength() {
+		
+		
+		return 0;
 	}
 
 

@@ -1,5 +1,6 @@
 package wordCount.driver;
 
+import wordCount.util.FileProcessor;
 import wordCount.util.MyLogger;
 
 public class Driver {
@@ -21,7 +22,7 @@ public class Driver {
 		MyLogger logger =new MyLogger(1);
 		
 		
-		
+		FileProcessor fileprocessor =new FileProcessor(inputfile);
 		
 		
 		
