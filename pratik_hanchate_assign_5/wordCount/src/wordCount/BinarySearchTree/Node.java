@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Node{
 
 	public String word;
-	public ArrayList<String> courses;
+	public ArrayList<String> word_array;
 	Node leftchild;
 	Node rightchild;
 	int wordCount;
@@ -15,24 +15,33 @@ public class Node{
 	
 	public Node(String word_in) {
 		word=word_in;
-		courses=new ArrayList<String>();
+		word_array=new ArrayList<String>();
 		
 		leftchild=rightchild=null;
 		
 	}
 	
+	public ArrayList<String> getWordArray() {
+		
+		return word_array;
+	}
+	
+	
+	public void addWord(String s) {
+		
+		this.word_array.add(s);
+	}
 	
 	
 	
+	public void deleteWord(String s) {
+		
+		if(word_array.contains(s))
+		this.word_array.remove(s);
+		
+	}
 	
 	
-	
-
-
-
-
-
-
 
 	public String getNodeWord() {
 		return word;
@@ -50,27 +59,6 @@ public class Node{
 		
 		return 0;
 	}
-
-
-
-
-
-
-	public ArrayList<String> getCourses() {
-		return courses;
-	}
-
-
-
-
-
-
-	public void setCourses(ArrayList<String> courses) {
-		this.courses = courses;
-	}
-
-
-
 
 
 
@@ -108,19 +96,8 @@ public class Node{
 
 
 
-	public void addCourse(String in) {
 		
-		this.courses.add(in);
 		
-	}
-	
-	public void deleteCourse(String in) {
-		
-		if(courses.contains(in)) {
-			courses.remove(in);
-		}
-	}
-	
 	public Node clone() {
 		
 		Node temp = null;
