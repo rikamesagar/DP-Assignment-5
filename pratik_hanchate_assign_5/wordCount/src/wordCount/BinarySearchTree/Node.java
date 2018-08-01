@@ -47,6 +47,7 @@ public class Node{
 		return word;
 	}
 
+	
 	public  void setNodeWord(String w_in) {
 		
 		this.word=w_in;
@@ -57,7 +58,7 @@ public class Node{
 	public int getNodeLength() {
 		
 		
-		return 0;
+		return this.word.length();
 	}
 
 
@@ -92,8 +93,6 @@ public class Node{
 	public void setRightchild(Node rightchild) {
 		this.rightchild = rightchild;
 	}
-
-
 
 
 		

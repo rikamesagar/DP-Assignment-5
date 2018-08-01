@@ -22,6 +22,7 @@ public class Driver {
 			System.out.println("Output File not Found, please check!");
 			System.exit(0);
 		}
+<<<<<<< HEAD
 		try {
 			outputFile = args[1];
 			if (!(outputFile.equals("delete.txt"))) {
@@ -31,6 +32,26 @@ public class Driver {
 		} catch (Exception e) {
 			System.out.println("No file present to delete values from Nodes");
 			System.exit(0);
+=======
+		
+		MyLogger logger =new MyLogger(1);
+		
+		
+		FileProcessor fileprocessor =new FileProcessor(inputfile);
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+public static boolean checkArguments(String arg[]) {
+		
+		if(arg.length<=2) {
+			return false;
+>>>>>>> 85a0553876bf4736b6f42381f2a7cd78166e907c
 		}
 		try {
 			noOfIterations = Integer.parseInt(args[2]);

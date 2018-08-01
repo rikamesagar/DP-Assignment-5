@@ -6,7 +6,7 @@ public class Words implements WordsI {
 
 
     @Override
-    public int noOfDistinctWords() {
+    public int noOfDistinctWords(Node node) {
         if (root==null)
             return 0;
 

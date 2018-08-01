@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class BinarySearchTree implements TreeI {
 
 	Node root;
-	String course = "";
-	String output = "";
+	int[] output_array;
+	String output="";
+	
 
 	public BinarySearchTree() {
 		root = null;
@@ -22,11 +23,13 @@ public class BinarySearchTree implements TreeI {
 
 			
 
-			ArrayList<String> temp_ar = node.getCourses();
+			ArrayList<String> temp_ar = node.getWordArray();
 			
 			for (String string : temp_ar) {
+			
+			//** write code for output here..	
 				
-				output = output + "\n" + node.getNodeIndex() + ":" + string;
+				output = output + "\n" + node.getNodeWord() + ":" + string;
 			}
 
 			inorder(node.getRightchild());
@@ -56,8 +59,8 @@ public class BinarySearchTree implements TreeI {
 
 	@Override
 	public void insertNode(Node newNode) {
-		int index = newNode.getNodeIndex();
-		if (searchNode(index) == null) {
+		int index = newNode.getNodeLength();
+		if (searchNode(newNode.getNodeWord()) == null) {
 			if (root == null) {
 				root = newNode;
 			} else {
@@ -65,7 +68,7 @@ public class BinarySearchTree implements TreeI {
 				Node parent_node;
 				while (true) {
 					parent_node = curr_node;
-					if (index < curr_node.getNodeIndex()) {
+					if (index < curr_node.getNodeLength()) {
 						curr_node = curr_node.getLeftchild();
 						if (curr_node == null) {
 							parent_node.setLeftchild(newNode);
@@ -92,7 +95,7 @@ public class BinarySearchTree implements TreeI {
 	}
 
 	@Override
-	public Node searchNode(int index) {
+	public Node searchNode(String index) {
 		// TODO Auto-generated method stub
 
 		Node current_node = root;
@@ -100,12 +103,12 @@ public class BinarySearchTree implements TreeI {
 		if (root == null)
 			return null;
 
-		while (current_node.getNodeIndex() != index) {
+		while (current_node.getNodeLength() != index.length()) {
 
-			if (index < current_node.getNodeIndex()) {
+			if (index.length() < current_node.getNodeLength()) {
 				current_node = current_node.getLeftchild();
 
-			} else if (index > current_node.getNodeIndex()) {
+			} else if (index.length() > current_node.getNodeLength()) {
 				current_node = current_node.getRightchild();
 			}
 
