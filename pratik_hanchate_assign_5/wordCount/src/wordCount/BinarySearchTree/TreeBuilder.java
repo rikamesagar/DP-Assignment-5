@@ -62,6 +62,7 @@ public class TreeBuilder {
 		Node existing_node = bst.searchNode(index);
 
 		if (existing_node == null) {
+			System.out.println("v");
 			main_node.addWord(word);
 			bst.insertNode(main_node);
 

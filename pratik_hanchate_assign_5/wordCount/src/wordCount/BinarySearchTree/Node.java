@@ -35,6 +35,7 @@ public class Node{
 	
 	public void addWord(String s) {
 		
+		System.out.println("added"+s);
 		this.word_array.add(s);
 	}
 	
