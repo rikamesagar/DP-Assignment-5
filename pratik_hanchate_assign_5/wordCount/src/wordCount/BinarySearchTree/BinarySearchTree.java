@@ -60,6 +60,7 @@ public class BinarySearchTree implements TreeI {
 	@Override
 	public void insertNode(Node newNode) {
 		int index = newNode.getNodeLength();
+		
 		if (searchNode(newNode.getNodeWord()) == null) {
 			if (root == null) {
 				root = newNode;
@@ -84,7 +85,7 @@ public class BinarySearchTree implements TreeI {
 				}
 			}
 		}
-
+		System.out.println("Node inserted");
 	}
 
 	@Override

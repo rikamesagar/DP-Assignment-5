@@ -14,6 +14,10 @@ public class Driver {
 		
 		TreeBuilder treeB=new TreeBuilder(inputFile);
 		
+		System.out.println(treeB.testprint(1));
+		
+		
+		
 		
 		/**
 		 *Code to check the files if/ if not passed through arguments

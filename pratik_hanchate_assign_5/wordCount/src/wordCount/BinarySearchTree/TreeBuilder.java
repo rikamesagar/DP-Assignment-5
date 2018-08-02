@@ -29,7 +29,7 @@ public class TreeBuilder {
 
 				System.out.println("Word is :"+word);
 				word = insertfile.readLine();
-			//**	fillTrees(word);
+				fillTrees(word);
 			}
 
 		} catch (Exception e) {

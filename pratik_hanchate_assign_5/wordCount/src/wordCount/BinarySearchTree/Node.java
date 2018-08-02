@@ -23,6 +23,12 @@ public class Node{
 	
 	public ArrayList<String> getWordArray() {
 		
+		for (String string : word_array) {
+		
+			System.out.println("A:"+string);
+			
+		}
+		
 		return word_array;
 	}
 	
