@@ -25,7 +25,7 @@ public class FileProcessor {
 		try {
 			filereader = new FileReader(input_filename);
 			br = new BufferedReader(filereader);
-			line=br.readLine();
+		//	line=br.readLine();
 			tokenizer = new StringTokenizer(line, delimiter);
 
 		} catch (Exception e) {

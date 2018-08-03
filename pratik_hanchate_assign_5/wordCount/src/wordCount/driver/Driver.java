@@ -1,6 +1,7 @@
 package wordCount.driver;
 
 import wordCount.BinarySearchTree.TreeBuilder;
+import wordCount.module1.Words;
 import wordCount.util.FileProcessor;
 import wordCount.util.MyLogger;
 
@@ -15,6 +16,9 @@ public class Driver {
 		TreeBuilder treeB=new TreeBuilder(inputFile);
 		
 		System.out.println(treeB.testprint(1));
+		
+		Words wordoperations=new Words(treeB.getTreeNodes());
+		
 		
 		
 		

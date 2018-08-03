@@ -1,5 +1,7 @@
 package wordCount.BinarySearchTree;
 
+import java.util.ArrayList;
+
 import javax.management.RuntimeErrorException;
 
 import wordCount.util.FileProcessor;
@@ -9,33 +11,44 @@ public class TreeBuilder {
 	FileProcessor insertfile;
 
 	
-	BinarySearchTree bst;
-	
+	public BinarySearchTree bst;
+	public ArrayList<Node> nodes;
 
-	String word;
+	String word="";
 
 	public TreeBuilder(String insertfilex) {
 
 		
 
 		bst = new BinarySearchTree();
+		
 		insertfile = new FileProcessor(insertfilex);
-
+		nodes= new ArrayList<Node>();
+		
 		try {
-			word = insertfile.readLine();
+		//	word = insertfile.readLine();
+			
 
 			// for insert file operation
 			while (word != null) {
 
-				System.out.println("Word is :"+word);
+				
 				word = insertfile.readLine();
+				System.out.println("Word is :"+word);
 				fillTrees(word);
 			}
 
+		
+			
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
 
+	}
+	
+	
+	public ArrayList<Node> getTreeNodes() {
+		return this.nodes;
 	}
 
 	public String testprint(int tree) {
@@ -44,7 +57,9 @@ public class TreeBuilder {
 		switch (tree) {
 		case 1:
 			finaloutput = bst.printNodes();
-
+			System.out.println("ZZ"+bst.nodeArray.size());
+			
+			this.nodes=bst.nodeArray;
 			break;
 
 		default:
@@ -72,6 +87,9 @@ public class TreeBuilder {
 
 		}
 
+	//*	System.out.println("Unique words is :"+existing_node.getUniqueWords());
+		
+		
 	}
 
 }

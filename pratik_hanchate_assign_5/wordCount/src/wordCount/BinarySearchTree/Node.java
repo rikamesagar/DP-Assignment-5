@@ -9,9 +9,10 @@ public class Node{
 	Node leftchild;
 	Node rightchild;
 	int wordCount;
-	int distinctwords;
-	int charactercount;
+	int uniquewords;
 	
+	public boolean isNodeDuplicate=false;
+	public int duplicatecount=0;
 	
 	public Node(String word_in) {
 		word=word_in;
@@ -23,22 +24,38 @@ public class Node{
 	
 	public ArrayList<String> getWordArray() {
 		
-		for (String string : word_array) {
-		
-			System.out.println("A:"+string);
-			
-		}
-		
-		return word_array;
+		return this.word_array;
 	}
 	
+	public Node getNode() {
+		
+		return this;
+		
+	}
 	
 	public void addWord(String s) {
 		
 		System.out.println("added"+s);
-		this.word_array.add(s);
+		
+		if(word_array.contains(s)) {
+			this.uniquewords=this.uniquewords-1;
+			this.isNodeDuplicate=true;
+			this.duplicatecount++;
+		}else {
+			this.word_array.add(s);
+		}
+		
 	}
 	
+	
+	
+	
+	public int getUniqueWords() {
+		
+		int unique=getWordArray().size()+this.uniquewords;
+		
+		return unique;
+	}
 	
 	
 	public void deleteWord(String s) {

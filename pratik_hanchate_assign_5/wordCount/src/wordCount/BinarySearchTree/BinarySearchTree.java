@@ -8,6 +8,8 @@ public class BinarySearchTree implements TreeI {
 	int[] output_array;
 	String output="";
 	
+	ArrayList<Node> nodeArray=new ArrayList<Node>();
+	
 
 	public BinarySearchTree() {
 		root = null;
@@ -24,15 +26,19 @@ public class BinarySearchTree implements TreeI {
 			
 
 			ArrayList<String> temp_ar = node.getWordArray();
+			System.out.println("XX"+temp_ar.size());
+			
 			
 			for (String string : temp_ar) {
 			
 			//** write code for output here..	
-				
+				nodeArray.add(node.getNode());
 				output = output + "\n" +string;
 			}
 
 			inorder(node.getRightchild());
+			
+			
 
 		} catch (Exception e) {
 			// TODO: handle exception
