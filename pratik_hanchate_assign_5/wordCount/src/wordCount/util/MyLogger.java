@@ -14,7 +14,7 @@ public class MyLogger {
 	}
 
 	public static enum DebugLevel {
-		CONSTRUCTOR, READ, RESULTS, NONE
+		NONE,CONSTRUCTOR, READ, RESULTS ,TREE
 	};
 
 	public static void setDebugValue(int levelIn) {
@@ -24,7 +24,7 @@ public class MyLogger {
 			case 1: debugLevel = DebugLevel.CONSTRUCTOR; break;
 			case 2: debugLevel = DebugLevel.READ; break;
 			case 3: debugLevel = DebugLevel.RESULTS; break;
-			case 4:	debugLevel = DebugLevel.CONSTRUCTOR; break;
+			case 4:	debugLevel = DebugLevel.TREE; break;
 
 		
 		}

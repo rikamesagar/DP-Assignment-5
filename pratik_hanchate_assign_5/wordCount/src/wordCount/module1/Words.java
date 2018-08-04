@@ -2,8 +2,8 @@ package wordCount.module1;
 
 import java.util.ArrayList;
 
-import wordCount.BinarySearchTree.BinarySearchTree;
-import wordCount.BinarySearchTree.Node;
+import wordCount.treesForStrings.BinarySearchTree;
+import wordCount.treesForStrings.Node;
 
 public class Words implements WordsI {
 

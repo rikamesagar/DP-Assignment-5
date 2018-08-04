@@ -1,4 +1,4 @@
-package wordCount.BinarySearchTree;
+package wordCount.treesForStrings;
 
 import java.util.ArrayList;
 

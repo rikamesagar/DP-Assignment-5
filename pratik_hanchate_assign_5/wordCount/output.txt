@@ -1,0 +1,3 @@
+Number of Words:8
+Number of Distinct Words:5
+Number Of Characters:26

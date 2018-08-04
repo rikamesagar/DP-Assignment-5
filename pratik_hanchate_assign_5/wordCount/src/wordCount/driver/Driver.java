@@ -1,9 +1,11 @@
 package wordCount.driver;
 
-import wordCount.BinarySearchTree.TreeBuilder;
+import wordCount.treesForStrings.TreeBuilder;
+import wordCount.Singleton.Singleton;
 import wordCount.module1.Words;
 import wordCount.util.FileProcessor;
 import wordCount.util.MyLogger;
+import wordCount.util.Results;
 
 public class Driver {
 
@@ -11,40 +13,62 @@ public class Driver {
 		
 		String inputFile="input.txt" ;
 		String outputFile="output.txt";
+		int NUM_OF_ITERATIONS=400;
+		//int debugval=Integer.parseInt(args[3]);
+		
+		long totaltime=0;
+		
+		MyLogger logger =new MyLogger(1);
+		
+		long startTime = System.currentTimeMillis();
+		System.out.println("Start time:"+startTime);
+		
+		Singleton singleobj= Singleton.getInstance();
+
+		try {
+
+			  for(int i=0;i<=NUM_OF_ITERATIONS;i++) {
+			
+				  //all the initialization
+				    singleobj.buildTree(inputFile);
+				//all the module operations	
+				    singleobj.doWordOperations();
+					
+			  }
+
+			  singleobj.writeToStdout(outputFile);
+			  singleobj.printOutputFile(outputFile);
+			long finishTime = System.currentTimeMillis();
+			
+			System.out.println("Start Time :"+startTime);
+			System.out.println("Finish Time :"+finishTime);
+			
+			totaltime=(finishTime-startTime)/NUM_OF_ITERATIONS;
+			
+			
+			
+			singleobj.writeToStdout(totaltime);
+			
+		} catch (ArithmeticException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
 		
 		
-		TreeBuilder treeB=new TreeBuilder(inputFile);
-		
-		System.out.println(treeB.testprint(1));
-		
-		Words wordoperations=new Words(treeB.getTreeNodes());
-		wordoperations.noOfCharacters();
-		wordoperations.noOfDistinctWords();
-		wordoperations.noOfWords();
 		
 		
 		
 		
-		/**
-		 *Code to check the files if/ if not passed through arguments
-		 */
 		
-//		try {
-//			inputFile = args[0];
-//			if (!(inputFile.equals("input.txt"))) {
-//				System.out.println("Input File not found, please check!");
-//				System.exit(0);
-//			}
-//		} catch (Exception e) {
-//			System.out.println("Output File not Found, please check!");
-//			System.exit(0);
-//		}
+		
+		
+		
 
 
 		
 
 		
-		//MyLogger logger =new MyLogger(1);
+		
 		
 		
 				
@@ -54,20 +78,57 @@ public class Driver {
 		
 	}
 	
-public static boolean checkArguments(String arg[]) {
+	
+	
+	
+public boolean checkArguments(String arg[]) {
+	
+	try {
 		
-		if(arg.length<=2) {
+		if(arg.length!=4) {
 			return false;
+			
 		}
 		
 		int var=Integer.parseInt(arg[2]);
+		int vard=Integer.parseInt(arg[3]);
 		
-		
-		if(var>3|| var<0) {
-			return  false;
+		if(vard<0 || vard>4) {
+			System.out.println("Value of debug should be more than zero and less than 4");
+			return false;
 		}
 		
-		return true ;
+		if(var<0) {
+			System.out.println("Value of N should be more than zero");
+			return false;
+		}
+		
+		if(!arg[1].equals("input.txt")) {
+			System.out.println("Value of N should be more than zero");
+			return false;
+		}
+		
+		if(!arg[1].equals("output.txt")) {
+			System.out.println("Value of N should be more than zero");
+			return false;
+		}
+		
+		
+		
+	} catch (NumberFormatException e) {
+		// TODO: handle exception
+		e.printStackTrace();
+		System.exit(0);
+	}
+	 catch (IllegalArgumentException e) {
+		 e.printStackTrace();
+		 System.exit(0);
+	 }
+	
+	
+	   return true;
+		
+		
 		
 	}
 
