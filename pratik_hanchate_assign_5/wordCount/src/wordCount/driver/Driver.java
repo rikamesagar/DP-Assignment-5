@@ -11,17 +11,24 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		String inputFile="input.txt" ;
-		String outputFile="output.txt";
-		int NUM_OF_ITERATIONS=400;
-		//int debugval=Integer.parseInt(args[3]);
 		
-		long totaltime=0;
+		if(!checkArguments(args)) {
+			System.out.println("Invalid Arguments");
+			System.exit(0);
+		}
 		
-		MyLogger logger =new MyLogger(1);
+		
+		String inputFile=args[0] ;
+		String outputFile=args[1];
+		int NUM_OF_ITERATIONS=Integer.parseInt(args[2]);
+		int debugval=Integer.parseInt(args[3]);
+		
+		double totaltime=0;
+		
+		MyLogger logger =new MyLogger(debugval);
 		
 		long startTime = System.currentTimeMillis();
-		System.out.println("Start time:"+startTime);
+		
 		
 		Singleton singleobj= Singleton.getInstance();
 
@@ -40,10 +47,10 @@ public class Driver {
 			  singleobj.printOutputFile(outputFile);
 			long finishTime = System.currentTimeMillis();
 			
-			System.out.println("Start Time :"+startTime);
-			System.out.println("Finish Time :"+finishTime);
 			
-			totaltime=(finishTime-startTime)/NUM_OF_ITERATIONS;
+			
+			totaltime=(double)(finishTime-startTime)/NUM_OF_ITERATIONS;
+			
 			
 			
 			
@@ -79,9 +86,9 @@ public class Driver {
 	}
 	
 	
+	//comand Line Validation
 	
-	
-public boolean checkArguments(String arg[]) {
+public static boolean checkArguments(String arg[]) {
 	
 	try {
 		

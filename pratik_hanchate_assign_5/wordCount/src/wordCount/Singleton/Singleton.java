@@ -2,7 +2,9 @@ package wordCount.Singleton;
 
 import wordCount.module1.Words;
 import wordCount.treesForStrings.TreeBuilder;
+import wordCount.util.MyLogger;
 import wordCount.util.Results;
+import wordCount.util.MyLogger.DebugLevel;
 
 public class Singleton {
 
@@ -14,7 +16,9 @@ public class Singleton {
 	 Results results;
 	 
 	  
-	   private Singleton(){}
+	   private Singleton(){
+		   MyLogger.writeMessage("Constructor of Singleton", DebugLevel.CONSTRUCTOR);
+	   }
 
 	   
 	   public static Singleton getInstance(){
@@ -34,7 +38,7 @@ public class Singleton {
 	   }
 	   
 	   
-	   public void writeToStdout(long s) {
+	   public void writeToStdout(double s) {
 		   results.writeToStdout("Total Time :"+s);
 	   }
 	   

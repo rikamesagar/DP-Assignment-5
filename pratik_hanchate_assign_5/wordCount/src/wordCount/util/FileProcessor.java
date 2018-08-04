@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
+import wordCount.util.MyLogger.DebugLevel;
+
 public class FileProcessor {
 
 	BufferedReader br;
@@ -22,6 +24,8 @@ public class FileProcessor {
 	 */
 	public FileProcessor(String input_filename) {
 
+		MyLogger.writeMessage("Constructor of FileProcessor", DebugLevel.CONSTRUCTOR);
+		
 		try {
 			filereader = new FileReader(input_filename);
 			br = new BufferedReader(filereader);
@@ -40,6 +44,7 @@ public class FileProcessor {
 	 */
 	public String readLine() {
 
+		MyLogger.writeMessage("Read From File", DebugLevel.READ);
 		try {
 
 			

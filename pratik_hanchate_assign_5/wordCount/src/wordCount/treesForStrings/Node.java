@@ -2,6 +2,9 @@ package wordCount.treesForStrings;
 
 import java.util.ArrayList;
 
+import wordCount.util.MyLogger;
+import wordCount.util.MyLogger.DebugLevel;
+
 public class Node{
 
 	public String word;
@@ -21,6 +24,7 @@ public class Node{
 		duplicate_words=new ArrayList<String>();
 		
 		leftchild=rightchild=null;
+		MyLogger.writeMessage("Constructor of Node", DebugLevel.CONSTRUCTOR);
 		
 	}
 	
@@ -37,7 +41,7 @@ public class Node{
 	
 	public void addWord(String s) {
 		
-		System.out.println("added"+s);
+		
 		
 		if(word_array.contains(s)) {
 			this.uniquewords=this.uniquewords-1;
@@ -124,18 +128,7 @@ public class Node{
 
 		
 		
-	public Node clone() {
-		
-		Node temp = null;
-		  try{
-		  temp = (Node) super.clone();
-		  } catch (Exception e){
-		  e.printStackTrace();
-		  System.exit(1);
-		  }
-		  return temp;
-		
-	}
+	
 
 
 	

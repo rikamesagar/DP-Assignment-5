@@ -27,27 +27,22 @@ public class BinarySearchTree implements TreeI {
 			
 
 			ArrayList<String> temp_ar = node.getWordArray();
-			System.out.println("XX"+temp_ar.size());
+			
 			
 			
 			for (String string : temp_ar) {
 			
-			//** write code for output here..	
-				//nodeArray.add(node.getNode());
-				//System.out.println("FFF"+node.word_array.size());
 				
 				if(!nodeArray.contains(node.getNode())) {
 					nodeArray.add(node.getNode());
-					System.out.println("DD"+node.word_array.size());
+					
 				}
 				
 				output = output + "\n" +string;
 			}
 			
 					
-			for(String s: node.duplicate_words) {
-				System.out.println("D_words:"+s);
-			}
+			
 
 			inorder(node.getRightchild());
 			
@@ -67,7 +62,7 @@ public class BinarySearchTree implements TreeI {
 		String output = "";
 
 		if (root == null) {
-			System.out.println("Tree is empty");
+			
 			return "";
 		}
 
@@ -80,7 +75,7 @@ public class BinarySearchTree implements TreeI {
 
 	@Override
 	public void insertNode(Node newNode) {
-		//int index = newNode.getNodeLength();
+		
 		
 		if (searchNode(newNode.getNodeWord()) == null) {
 			if (root == null) {
@@ -106,7 +101,7 @@ public class BinarySearchTree implements TreeI {
 				}
 			}
 		}
-		System.out.println("Node inserted");
+		
 	}
 
 	@Override

@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import wordCount.treesForStrings.BinarySearchTree;
 import wordCount.treesForStrings.Node;
+import wordCount.util.MyLogger;
+import wordCount.util.MyLogger.DebugLevel;
 
 public class Words implements WordsI {
 
@@ -18,29 +20,20 @@ public class Words implements WordsI {
 	public Words(ArrayList<Node> nodes_in) {
 		// TODO Auto-generated constructor stub
 		nodesArray = nodes_in;
-		
+
 		duplicates();
+		MyLogger.writeMessage("Constructor of Words", DebugLevel.CONSTRUCTOR);
 
 	}
 
 	public void duplicates() {
 
-		System.out.println("NodeLength"+nodesArray.size());
-		
 		for (Node node : nodesArray) {
 
-			dup_array=node.duplicate_words;
-			distincarray=node.word_array;
-			
-			for(String s : node.word_array) {
-				System.out.println("KKH____________"+s);
-			}
-			
-			
+			dup_array = node.duplicate_words;
+			distincarray = node.word_array;
+
 		}
-		
-		
-		
 
 	}
 
@@ -48,41 +41,35 @@ public class Words implements WordsI {
 	public int noOfWords() {
 
 		for (Node node : nodesArray) {
-		
-		for(String s : node.word_array) {
-			totalnumofWords++;
-		}
-		
-		for(String s: node.duplicate_words) {
-			totalnumofWords++;
-		}
+
+			for (String s : node.word_array) {
+				totalnumofWords++;
+			}
+
+			for (String s : node.duplicate_words) {
+				totalnumofWords++;
+			}
 
 		}
-		
-		System.out.println("NUmber of words ="+totalnumofWords);
-		
-		
+
 		return totalnumofWords;
 	}
 
 	@Override
 	public int noOfCharacters() {
 
-		
 		for (Node node : nodesArray) {
-		
-		for(String s : node.word_array) {
-			totalnumberofCharacters=totalnumberofCharacters+s.length();
-		}
-		
-		for(String s: node.duplicate_words) {
-			totalnumberofCharacters=totalnumberofCharacters+s.length();
-		}
-		
+
+			for (String s : node.word_array) {
+				totalnumberofCharacters = totalnumberofCharacters + s.length();
+			}
+
+			for (String s : node.duplicate_words) {
+				totalnumberofCharacters = totalnumberofCharacters + s.length();
+			}
+
 		}
 
-		System.out.println("Number of Characters="+totalnumberofCharacters);
-		
 		return this.totalnumberofCharacters;
 	}
 
@@ -91,9 +78,8 @@ public class Words implements WordsI {
 		// TODO Auto-generated method stub
 
 		for (Node node : nodesArray) {
-		uniqueWords = uniqueWords+node.word_array.size();
+			uniqueWords = uniqueWords + node.word_array.size();
 		}
-		System.out.println("Total no of Distinct Words =" + uniqueWords);
 
 		return uniqueWords;
 
