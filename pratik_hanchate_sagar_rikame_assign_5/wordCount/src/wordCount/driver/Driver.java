@@ -63,26 +63,6 @@ public class Driver {
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-
-
-		
-
-		
-		
-		
-		
-				
-		
-		
-		
-		
 	}
 	
 	
@@ -91,6 +71,8 @@ public class Driver {
 public static boolean checkArguments(String arg[]) {
 	
 	try {
+		
+	//	System.out.println("arg"+arg.length);
 		
 		if(arg.length!=4) {
 			return false;
@@ -110,13 +92,13 @@ public static boolean checkArguments(String arg[]) {
 			return false;
 		}
 		
-		if(!arg[1].equals("input.txt")) {
-			System.out.println("Value of N should be more than zero");
+		if(!arg[0].equals("input.txt")) {
+			System.out.println("Invalid Input File name ,Please enter input.txt as file name");
 			return false;
 		}
 		
 		if(!arg[1].equals("output.txt")) {
-			System.out.println("Value of N should be more than zero");
+			System.out.println("Invalid  output File name ,Please enter output.txt as file name");
 			return false;
 		}
 		
