@@ -8,6 +8,8 @@ import wordCount.BinarySearchTree.Node;
 public class Words implements WordsI {
 
 	public ArrayList<Node> nodesArray;
+	public ArrayList<String> dup_array;
+	public ArrayList<String> distincarray;
 	int totalnumofWords;
 	int totalnumberofCharacters;
 	int uniqueWords;
@@ -23,14 +25,22 @@ public class Words implements WordsI {
 
 	public void duplicates() {
 
+		System.out.println("NodeLength"+nodesArray.size());
+		
 		for (Node node : nodesArray) {
 
-			if (node.isNodeDuplicate) {
-				System.out.println("This node is duplicate" + node.getNodeWord() + "D Count is " + node.duplicatecount);
-				duplicate_num = node.duplicatecount;
-
+			dup_array=node.duplicate_words;
+			distincarray=node.word_array;
+			
+			for(String s : node.word_array) {
+				System.out.println("KKH____________"+s);
 			}
+			
+			
 		}
+		
+		
+		
 
 	}
 
@@ -38,17 +48,19 @@ public class Words implements WordsI {
 	public int noOfWords() {
 
 		for (Node node : nodesArray) {
-
+		
+		for(String s : node.word_array) {
 			totalnumofWords++;
-
-			if (node.isNodeDuplicate) {
-
-				totalnumofWords = totalnumofWords + node.duplicatecount;
-
-			}
+		}
+		
+		for(String s: node.duplicate_words) {
+			totalnumofWords++;
 		}
 
+		}
+		
 		System.out.println("NUmber of words ="+totalnumofWords);
+		
 		
 		return totalnumofWords;
 	}
@@ -56,16 +68,17 @@ public class Words implements WordsI {
 	@Override
 	public int noOfCharacters() {
 
+		
 		for (Node node : nodesArray) {
-
-			totalnumberofCharacters = totalnumberofCharacters + node.getNodeWord().length();
-
-			if (node.isNodeDuplicate) {
-				
-				duplicate_num = node.duplicatecount;
-				totalnumberofCharacters = duplicate_num * node.getNodeWord().length();
-
-			}
+		
+		for(String s : node.word_array) {
+			totalnumberofCharacters=totalnumberofCharacters+s.length();
+		}
+		
+		for(String s: node.duplicate_words) {
+			totalnumberofCharacters=totalnumberofCharacters+s.length();
+		}
+		
 		}
 
 		System.out.println("Number of Characters="+totalnumberofCharacters);
@@ -77,8 +90,10 @@ public class Words implements WordsI {
 	public int noOfDistinctWords() {
 		// TODO Auto-generated method stub
 
-		uniqueWords = this.nodesArray.size();
-		System.out.println("Total no of Unique Words =" + uniqueWords);
+		for (Node node : nodesArray) {
+		uniqueWords = uniqueWords+node.word_array.size();
+		}
+		System.out.println("Total no of Distinct Words =" + uniqueWords);
 
 		return uniqueWords;
 

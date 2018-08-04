@@ -18,7 +18,9 @@ public class Driver {
 		System.out.println(treeB.testprint(1));
 		
 		Words wordoperations=new Words(treeB.getTreeNodes());
-		
+		wordoperations.noOfCharacters();
+		wordoperations.noOfDistinctWords();
+		wordoperations.noOfWords();
 		
 		
 		

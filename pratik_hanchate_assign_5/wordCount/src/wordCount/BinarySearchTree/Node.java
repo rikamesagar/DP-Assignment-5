@@ -6,6 +6,7 @@ public class Node{
 
 	public String word;
 	public ArrayList<String> word_array;
+	public ArrayList<String> duplicate_words;
 	Node leftchild;
 	Node rightchild;
 	int wordCount;
@@ -17,6 +18,7 @@ public class Node{
 	public Node(String word_in) {
 		word=word_in;
 		word_array=new ArrayList<String>();
+		duplicate_words=new ArrayList<String>();
 		
 		leftchild=rightchild=null;
 		
@@ -41,6 +43,7 @@ public class Node{
 			this.uniquewords=this.uniquewords-1;
 			this.isNodeDuplicate=true;
 			this.duplicatecount++;
+			duplicate_words.add(s);
 		}else {
 			this.word_array.add(s);
 		}

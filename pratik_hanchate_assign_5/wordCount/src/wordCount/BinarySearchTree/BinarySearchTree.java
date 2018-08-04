@@ -9,6 +9,7 @@ public class BinarySearchTree implements TreeI {
 	String output="";
 	
 	ArrayList<Node> nodeArray=new ArrayList<Node>();
+	ArrayList<String> st_array=new ArrayList<String>();
 	
 
 	public BinarySearchTree() {
@@ -32,8 +33,20 @@ public class BinarySearchTree implements TreeI {
 			for (String string : temp_ar) {
 			
 			//** write code for output here..	
-				nodeArray.add(node.getNode());
+				//nodeArray.add(node.getNode());
+				//System.out.println("FFF"+node.word_array.size());
+				
+				if(!nodeArray.contains(node.getNode())) {
+					nodeArray.add(node.getNode());
+					System.out.println("DD"+node.word_array.size());
+				}
+				
 				output = output + "\n" +string;
+			}
+			
+					
+			for(String s: node.duplicate_words) {
+				System.out.println("D_words:"+s);
 			}
 
 			inorder(node.getRightchild());
@@ -59,6 +72,8 @@ public class BinarySearchTree implements TreeI {
 		}
 
 		output = inorder(root);
+		
+		
 
 		return output;
 	}
